@@ -315,7 +315,7 @@ CONFIGS = [
 
 def replay_process(cfg, lr):
   proc = managed_processes[cfg.proc_name]
-  if isinstance(proc, PythonProcess) and cfg.proc_name != 'locationd':
+  if isinstance(proc, PythonProcess):
     return python_replay_process(cfg, lr)
   else:
     return cpp_replay_process(cfg, lr)
